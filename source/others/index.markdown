@@ -4,13 +4,13 @@ title: "其他"
 ---
 ## <span id="build-system">Build System</span>
 
-Build System 讓你能夠在 Sublime Text 2 內直接運行程式檔案，除非你有明確指定路徑，否則它會根據你的 `PATH` 尋找可執行的指令，因此你的 `PATH` 變數必須正確地被 Sublime Text 2 辨識。
+Build System 让你能够在 Sublime Text 2 内直接运行程式档案，除非你有明确指定路径，否则它会根据你的 `PATH` 寻找可执行的指令，因此你的 `PATH` 变数必须正确地被 Sublime Text 2 辨识。
 
-在某些系統平台上，`PATH` 變數會隨著從終端機 CLI 到 GUI 應用程式而改變，因此可能你在終端機裡執行指令是正常的，可是在 Sublime Text 2 裡卻失效。
+在某些系统平台上，`PATH` 变数会随着从终端机 CLI 到 GUI 应用程式而改变，因此可能你在终端机里执行指令是正常的，可是在 Sublime Text 2 里却失效。
 
-一種解決方式是在 _/User_ 目錄下建立一個 _.sublime-build_ 檔案（JSON 格式），例如：_Python.sublime-build_，使用 `cmd` 指定指令的絕對路徑，這只有當你執行 build system 時才會改變 `PATH` 變數，完成之後將會自動恢復成原來的。
+一种解决方式是在 _/User_ 目录下建立一个 _.sublime-build_ 档案（JSON 格式），例如：_Python.sublime-build_，使用 `cmd` 指定指令的绝对路径，这只有当你执行 build system 时才会改变 `PATH` 变数，完成之后将会自动恢复成原来的。
 
-範例：
+范例：
 
 ``` json
 {
@@ -20,19 +20,19 @@ Build System 讓你能夠在 Sublime Text 2 內直接運行程式檔案，除非
 }
 ```
 
-* `cmd`：這句等於執行 `python -u /path/to/current/file.ext`；
-* `file_regex`：Perl-style 的正則表達式，當 build system 失敗時，這段就是用來捕捉錯誤訊息的檔名，以及出錯的程式碼行數；
-* `selector`：如果選單 _Tools >> Build System_ 是設置 Automatic 時，Sublime Text 2 將會根據這個設定，自動使用對應的指令；
+* `cmd`：这句等于执行 `python -u /path/to/current/file.ext`；
+* `file_regex`：Perl-style 的正则表达式，当 build system 失败时，这段就是用来捕捉错误讯息的档名，以及出错的程式码行数；
+* `selector`：如果选单 _Tools >> Build System_ 是设置 Automatic 时，Sublime Text 2 将会根据这个设定，自动使用对应的指令；
 
 ## <span id="command-line">命令列工具（Command Line）</span>
 
-Sublime Text 2 提供 CLI 工具：`subl`，讓你能在終端機裡用 Sublime Text 2 開啟檔案或是整個資料夾專案，或是將它設為像是 Git、Subversion 這類 Unix 工具的預設編輯器。
+Sublime Text 2 提供 CLI 工具：`subl`，让你能在终端机里用 Sublime Text 2 开启档案或是整个资料夹专案，或是将它设为像是 Git、Subversion 这类 Unix 工具的预设编辑器。
 
-這個 `subl` CLI 工具在你安裝 Sublime Text 2 時就已經包含在一起了，只需要建立一個捷徑到 `PATH` 搜尋的路徑上：
+这个 `subl` CLI 工具在你安装 Sublime Text 2 时就已经包含在一起了，只需要建立一个捷径到 `PATH` 搜寻的路径上：
 
     ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
 
-然後執行 `subl --help` 查看用法：
+然后执行 `subl --help` 查看用法：
 
 ```
 Sublime Text 2 Build 2217
